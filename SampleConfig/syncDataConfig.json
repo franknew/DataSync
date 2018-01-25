@@ -1,0 +1,132 @@
+﻿[
+  {
+    "TableName": "G_HIS",//表名
+    "Owner": "DB2INST1",
+    "Regex": "{0:yyyyMM}",//表名表达式，会同步到G_HIS201801表中，用来解决分表分区同步问题
+    "ColumnMapping": [
+      {
+        "SourceColumn": "ZDID",
+        "Primarykey": true//是否主键，每个表必须定义主键，否则无法更新
+      },
+      {
+        "SourceColumn": "TIMES",
+        "Primarykey": true,
+        "DataType": "System.DateTime"//定义数据类型，一般不用定义，但是byte[]要定义，不然json转换后默认是base64 string,无法更新到byte类型列去
+      }
+    ]
+  },
+  {
+    "TableName": "G_POSITION",
+    "Owner": "DB2INST1",
+    "Regex": "{0:yyyyMM}",
+    "ColumnMapping": [
+      {
+        "SourceColumn": "ZDID",
+        "Primarykey": true
+      },
+      {
+        "SourceColumn": "PAY_STATE_SYNC_TIME",
+        "Ingore": true//忽略该列，不进行更新
+      },
+      {
+        "SourceColumn": "PAY_EXPIRE_TIME",
+        "Ingore": true
+      },
+      {
+        "SourceColumn": "LYDZ",
+        "Ingore": true
+      },
+      {
+        "SourceColumn": "TIMES",
+        "DataType": "System.DateTime"
+      },
+      {
+        "SourceColumn": "SXSJ",
+        "DataType": "System.DateTime"
+      }
+    ]
+  },
+  {
+    "TableName": "D_MEDIA",
+    "Owner": "DB2INST1",
+    "Regex": "{0:yyyyMM}",
+    "Mapping": "G_MEDIA",//表名匹配，该设置会获得D_MEDIA数据同步到表G_MEDIA201801，用来解决不同表名同步问题
+    "ColumnMapping": [
+      {
+        "SourceColumn": "CAR_ID",
+        "Ingore": true
+      },
+      {
+        "SourceColumn": "COACH_NAME",
+        "TargetColumn": "JLYXM"//列名匹配，用来解决不同列名之间数据同步问题
+      },
+      {
+        "SourceColumn": "COACH_NO",
+        "TargetColumn": "JLYBH"
+      },
+      {
+        "SourceColumn": "DATAS",
+        "TargetColumn": "DATA",
+        "DataType": "System.Byte[]"
+      },
+      {
+        "SourceColumn": "ID",
+        "TargetColumn": "BS",
+        "Primarykey": true
+      },
+      {
+        "SourceColumn": "STUDENT_NAME",
+        "TargetColumn": "XYXM"
+      },
+      {
+        "SourceColumn": "STUDENT_NO",
+        "TargetColumn": "XYBH"
+      },
+      {
+        "SourceColumn": "TYPES",
+        "TargetColumn": "TYPE"
+      },
+      {
+        "SourceColumn": "URLS",
+        "Ingore": true
+      }
+    ]
+  },
+  {
+    "TableName": "DT_CLASSHOUR",
+    "Owner": "DB2INST1",
+    "ColumnMapping": [
+      {
+        "SourceColumn": "STUDENT_NO",
+        "Primarykey": true
+      },
+      {
+        "SourceColumn": "TIMES",
+        "Primarykey": true,
+        "DataType": "System.DateTime"
+      }
+    ]
+  },
+  {
+    "TableName": "T_JPPXJL",
+    "Owner": "DB2INST1",
+    "ColumnMapping": [
+      {
+        "SourceColumn": "BS",
+        "Primarykey": true
+      },
+      {
+        "SourceColumn": "ZDID",
+        "Primarykey": true
+      },
+      {
+        "SourceColumn": "MSG_TIME",
+        "DataType": "System.DateTime"
+      },
+      {
+        "SourceColumn": "DATA",
+        "DataType": "System.Byte[]"
+      }
+    ]
+  }
+]

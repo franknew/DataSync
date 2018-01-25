@@ -1,0 +1,9 @@
+﻿[
+{
+  "Group": "syncdata-local",//生产者的ID
+  "Address": "127.0.0.1:9876",//mq的地址
+  "Topic": ["syncdata-local"],//推送数据的主题
+  "Top": 1000,//每次扫表1000条循环扫，直到没有可以数据可以同步为止
+  "EnableLogger": true//是否记录日志
+}
+]

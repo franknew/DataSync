@@ -1,0 +1,13 @@
+﻿[
+  {
+    "TableName": "D_MEDIA",//查询数据的表名
+    "Owner": "db2inst1",//表的owner
+    "Regex": "{0:yyyyMM}",//表达式，可以用来替换表名，该配置会去D_MEDIA201801这个表去查询数据
+    "Tick": 1,//扫表间隔，单位是秒
+    "Action": "InsertOrUpdate",//该表数据的同步行为
+    "DeleteData": false,//查询以后是否删除推送入队列的数据
+    "CheckColumn": "LastUpdateTime",//查询表的条件列，一般是数据最后更新时间或者版本号
+    "SelectSQL": "select  a.*,b.ZDID from {TableName} a left join db2inst1.t_sbxx b on a.car_id = b.clid "//自定义sql，如果定义了sql，则不会根据tablename去查询
+
+  }
+]

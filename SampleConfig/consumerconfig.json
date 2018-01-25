@@ -1,0 +1,8 @@
+﻿[
+{
+  "Group": "syncdata-local",//消费者ID，不能重复
+  "Address": "127.0.0.1:9876",//mq的地址
+  "Topic": ["syncdata-local"],
+  "EnableLog": true
+}
+]
