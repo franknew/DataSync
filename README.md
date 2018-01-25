@@ -13,3 +13,6 @@ watcher为监视数据更新的windows service
 
 <br>
 sync service为从rocket-mq取同步数据同步到数据库的windows service
+<br>
+配置文件：
+<br>
