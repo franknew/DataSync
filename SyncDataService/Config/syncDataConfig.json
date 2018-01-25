@@ -1,0 +1,131 @@
+﻿[
+  {
+    "TableName": "G_HIS",
+    "Owner": "DB2INST1",
+    "Regex": "{0:yyyyMM}",
+    "ColumnMapping": [
+      {
+        "SourceColumn": "ZDID",
+        "Primarykey": true
+      },
+      {
+        "SourceColumn": "TIMES",
+        "Primarykey": true,
+        "DataType": "System.DateTime"
+      }
+    ]
+  },
+  {
+    "TableName": "G_POSITION",
+    "Owner": "DB2INST1",
+    "ColumnMapping": [
+      {
+        "SourceColumn": "ZDID",
+        "Primarykey": true
+      },
+      {
+        "SourceColumn": "PAY_STATE_SYNC_TIME",
+        "Ingore": true
+      },
+      {
+        "SourceColumn": "PAY_EXPIRE_TIME",
+        "Ingore": true
+      },
+      {
+        "SourceColumn": "LYDZ",
+        "Ingore": true
+      },
+      {
+        "SourceColumn": "TIMES",
+        "DataType": "System.DateTime"
+      },
+      {
+        "SourceColumn": "SXSJ",
+        "DataType": "System.DateTime"
+      }
+    ]
+  },
+  {
+    "TableName": "D_MEDIA",
+    "Owner": "DB2INST1",
+    "Regex": "{0:yyyyMM}",
+    "Mapping": "G_MEDIA",
+    "ColumnMapping": [
+      {
+        "SourceColumn": "CAR_ID",
+        "Ingore": true
+      },
+      {
+        "SourceColumn": "COACH_NAME",
+        "TargetColumn": "JLYXM"
+      },
+      {
+        "SourceColumn": "COACH_NO",
+        "TargetColumn": "JLYBH"
+      },
+      {
+        "SourceColumn": "DATAS",
+        "TargetColumn": "DATA",
+        "DataType": "System.Byte[]"
+      },
+      {
+        "SourceColumn": "ID",
+        "TargetColumn": "BS",
+        "Primarykey": true
+      },
+      {
+        "SourceColumn": "STUDENT_NAME",
+        "TargetColumn": "XYXM"
+      },
+      {
+        "SourceColumn": "STUDENT_NO",
+        "TargetColumn": "XYBH"
+      },
+      {
+        "SourceColumn": "TYPES",
+        "TargetColumn": "TYPE"
+      },
+      {
+        "SourceColumn": "URLS",
+        "Ingore": true
+      }
+    ]
+  },
+  {
+    "TableName": "DT_CLASSHOUR",
+    "Owner": "DB2INST1",
+    "ColumnMapping": [
+      {
+        "SourceColumn": "STUDENT_NO",
+        "Primarykey": true
+      },
+      {
+        "SourceColumn": "TIMES",
+        "Primarykey": true,
+        "DataType": "System.DateTime"
+      }
+    ]
+  },
+  {
+    "TableName": "T_JPPXJL",
+    "Owner": "DB2INST1",
+    "ColumnMapping": [
+      {
+        "SourceColumn": "BS",
+        "Primarykey": true
+      },
+      {
+        "SourceColumn": "ZDID",
+        "Primarykey": true
+      },
+      {
+        "SourceColumn": "MSG_TIME",
+        "DataType": "System.DateTime"
+      },
+      {
+        "SourceColumn": "DATA",
+        "DataType": "System.Byte[]"
+      }
+    ]
+  }
+]

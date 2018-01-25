@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2024
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChainwayMQ", "ChainwayMQ\ChainwayMQ.csproj", "{1549410C-A2C0-4EFF-93E2-A99AEF6A8B48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SyncData.BLL", "BLL\SyncData.BLL.csproj", "{73E9497E-D75F-4F49-A155-9DE6A26CCCEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleMapper", "SimpleMapper\SimpleMapper.csproj", "{9A1FB493-8C19-48AC-B033-13AE8D4ADFAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SyncData.Watcher", "TableWatcherService\SyncData.Watcher.csproj", "{9D45B77E-C3F6-48AA-8701-4290C29189E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SyncData.Service", "SyncDataService\SyncData.Service.csproj", "{D385BBBD-A6DC-488C-A15A-F2C6777DCA74}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SyncData", "SyncData", "{709A42CE-4324-49DB-8016-021537E30078}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1549410C-A2C0-4EFF-93E2-A99AEF6A8B48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1549410C-A2C0-4EFF-93E2-A99AEF6A8B48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1549410C-A2C0-4EFF-93E2-A99AEF6A8B48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1549410C-A2C0-4EFF-93E2-A99AEF6A8B48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1549410C-A2C0-4EFF-93E2-A99AEF6A8B48}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{73E9497E-D75F-4F49-A155-9DE6A26CCCEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73E9497E-D75F-4F49-A155-9DE6A26CCCEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73E9497E-D75F-4F49-A155-9DE6A26CCCEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73E9497E-D75F-4F49-A155-9DE6A26CCCEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73E9497E-D75F-4F49-A155-9DE6A26CCCEF}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{9A1FB493-8C19-48AC-B033-13AE8D4ADFAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A1FB493-8C19-48AC-B033-13AE8D4ADFAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A1FB493-8C19-48AC-B033-13AE8D4ADFAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A1FB493-8C19-48AC-B033-13AE8D4ADFAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D45B77E-C3F6-48AA-8701-4290C29189E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D45B77E-C3F6-48AA-8701-4290C29189E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D45B77E-C3F6-48AA-8701-4290C29189E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D45B77E-C3F6-48AA-8701-4290C29189E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D385BBBD-A6DC-488C-A15A-F2C6777DCA74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D385BBBD-A6DC-488C-A15A-F2C6777DCA74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D385BBBD-A6DC-488C-A15A-F2C6777DCA74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D385BBBD-A6DC-488C-A15A-F2C6777DCA74}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1549410C-A2C0-4EFF-93E2-A99AEF6A8B48} = {709A42CE-4324-49DB-8016-021537E30078}
+		{73E9497E-D75F-4F49-A155-9DE6A26CCCEF} = {709A42CE-4324-49DB-8016-021537E30078}
+		{9A1FB493-8C19-48AC-B033-13AE8D4ADFAC} = {709A42CE-4324-49DB-8016-021537E30078}
+		{9D45B77E-C3F6-48AA-8701-4290C29189E0} = {709A42CE-4324-49DB-8016-021537E30078}
+		{D385BBBD-A6DC-488C-A15A-F2C6777DCA74} = {709A42CE-4324-49DB-8016-021537E30078}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D480F5CC-0722-4C6F-8DAD-A613964C4D8E}
+	EndGlobalSection
+EndGlobal

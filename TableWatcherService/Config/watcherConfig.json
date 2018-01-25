@@ -1,0 +1,12 @@
+﻿[
+  {
+    "Mapping": "T_PXJL",
+    "TableName": "T_CP_STUDYLOCUS",
+    "Owner": "DBO",
+    "Tick": 10,
+    "GenerateID": true,
+    "Action": "insertorupdate",
+    "CheckColumn": "OperateTime",
+    "SelectSQL": "SELECT  OperateTime,StudyLocusId AS BS,'2' AS DGLX,CASE WHEN PeriodSubType='3' THEN '2' WHEN PeriodSubType='4' THEN '3' ELSE '1' END AS KSLX,SubjectType AS PXKM,NULL AS JSYBH,TeacherCode AS JLYBH,StudyCode AS XYBH,BeginTime AS PXKSSJ,EndTime AS PXJSSJ,StudyTime/60 AS YXSC,Mileage AS YXLC,OperateTime AS CZSJ,NULL AS ZPP,'1' AS SFYZ,OrgCode AS PXJG,StudyTime/60 AS PXSC,SubjectType AS PXJD,'1' AS XYFKCS,NULL AS JLLX,CardNo AS KH,StudentName AS XYXM,TeacherName AS JLYXM,NULL AS BZ,'1' AS ZJ,SIM AS SBIDH,NULL AS PXJE,CarNumber AS CPHM,OrgCode AS PXJGMC,'441900' AS SSJG,NULL AS CZR,NULL AS CZLX,NULL AS CZGS,NULL AS FID FROM T_CP_STUDYLOCUS a LEFT OUTER JOIN (SELECT cc.StudyId,StudyCode,CardNo,StudentName FROM T_CP_Study cc LEFT OUTER JOIN T_CP_StudyAttr dd ON cc.StudyId=dd.StudyId) b ON a.StudyId=b.StudyId LEFT OUTER JOIN (SELECT TeacherId,TeacherCode FROM T_CP_TeacherAttr) c ON a.TeacherId=c.TeacherId LEFT OUTER JOIN (SELECT OrgId,OrgCode FROM T_Sys_Org) d ON a.OrgId=d.OrgId"
+  }
+]

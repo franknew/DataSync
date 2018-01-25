@@ -1,0 +1,15 @@
+
+*.ide
+
+*.dll
+*.pdb
+*\obj\
+bin\
+\bin\
+*.cache
+*.txt
+packages\
+.vs\
+
+
+
