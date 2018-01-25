@@ -34,7 +34,7 @@
       <HintPath>..\packages\IBatisNet.1.0.0\lib\net20\Castle.DynamicProxy.dll</HintPath>
     </Reference>
     <Reference Include="fastjson-1.2.12, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RocketMQ-Client.1.0.0\lib\net40\fastjson-1.2.12.dll</HintPath>
+      <HintPath>..\packages\RocketMQ-Client.1.0.1\lib\net40\fastjson-1.2.12.dll</HintPath>
     </Reference>
     <Reference Include="IBatisNet.Common, Version=1.6.2.0, Culture=neutral, PublicKeyToken=ed781d9fc396c6ca, processorArchitecture=MSIL">
       <HintPath>..\packages\IBatisNet.1.0.0\lib\net20\IBatisNet.Common.dll</HintPath>
@@ -127,19 +127,19 @@
       <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.Runtime.JNI.dll</HintPath>
     </Reference>
     <Reference Include="netty-all-4.0.36.Final, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RocketMQ-Client.1.0.0\lib\net40\netty-all-4.0.36.Final.dll</HintPath>
+      <HintPath>..\packages\RocketMQ-Client.1.0.1\lib\net40\netty-all-4.0.36.Final.dll</HintPath>
     </Reference>
     <Reference Include="rocketmq-client-4.2.0-incubating, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RocketMQ-Client.1.0.0\lib\net40\rocketmq-client-4.2.0-incubating.dll</HintPath>
+      <HintPath>..\packages\RocketMQ-Client.1.0.1\lib\net40\rocketmq-client-4.2.0-incubating.dll</HintPath>
     </Reference>
     <Reference Include="rocketmq-common-4.2.0-incubating, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RocketMQ-Client.1.0.0\lib\net40\rocketmq-common-4.2.0-incubating.dll</HintPath>
+      <HintPath>..\packages\RocketMQ-Client.1.0.1\lib\net40\rocketmq-common-4.2.0-incubating.dll</HintPath>
     </Reference>
     <Reference Include="rocketmq-remoting-4.2.0-incubating, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RocketMQ-Client.1.0.0\lib\net40\rocketmq-remoting-4.2.0-incubating.dll</HintPath>
+      <HintPath>..\packages\RocketMQ-Client.1.0.1\lib\net40\rocketmq-remoting-4.2.0-incubating.dll</HintPath>
     </Reference>
     <Reference Include="slf4j-api-1.7.5, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RocketMQ-Client.1.0.0\lib\net40\slf4j-api-1.7.5.dll</HintPath>
+      <HintPath>..\packages\RocketMQ-Client.1.0.1\lib\net40\slf4j-api-1.7.5.dll</HintPath>
     </Reference>
     <Reference Include="SOAFramework.Library.DAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SOAFramework.Library.DAL.1.0.7\lib\net40\SOAFramework.Library.DAL.dll</HintPath>
@@ -153,8 +153,8 @@
     <Reference Include="SOAFramework.Library.Json, Version=4.0.8.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SOAFramework.Library.Json.1.0.0\lib\net40\SOAFramework.Library.Json.dll</HintPath>
     </Reference>
-    <Reference Include="SOAFramework.Library.JsonRpc">
-      <HintPath>..\commondll\SOAFramework.Library.JsonRpc.dll</HintPath>
+    <Reference Include="SOAFramework.Library.JsonRpc, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SOAFramework.Library.JsonRpc.1.0.0\lib\net40\SOAFramework.Library.JsonRpc.dll</HintPath>
     </Reference>
     <Reference Include="SOAFramework.Library.Lib, Version=1.0.0.5, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SOAFramework.Library.Json.1.0.0\lib\net40\SOAFramework.Library.Lib.dll</HintPath>
@@ -198,6 +198,10 @@
     <ProjectReference Include="..\ChainwayMQ\ChainwayMQ.csproj">
       <Project>{1549410c-a2c0-4eff-93e2-a99aef6a8b48}</Project>
       <Name>ChainwayMQ</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pipe\SyncData.Pipe.csproj">
+      <Project>{607995ff-4351-474d-a1a7-91534557abfc}</Project>
+      <Name>SyncData.Pipe</Name>
     </ProjectReference>
     <ProjectReference Include="..\SimpleMapper\SimpleMapper.csproj">
       <Project>{9a1fb493-8c19-48ac-b033-13ae8d4adfac}</Project>

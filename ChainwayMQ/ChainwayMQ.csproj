@@ -32,7 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="fastjson-1.2.12, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RocketMQ-Client.1.0.0\lib\net40\fastjson-1.2.12.dll</HintPath>
+      <HintPath>..\packages\RocketMQ-Client.1.0.1\lib\net40\fastjson-1.2.12.dll</HintPath>
     </Reference>
     <Reference Include="IKVM.AWT.WinForms, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
       <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.AWT.WinForms.dll</HintPath>
@@ -119,21 +119,21 @@
       <HintPath>..\packages\IKVM.8.1.5717.0\lib\IKVM.Runtime.JNI.dll</HintPath>
     </Reference>
     <Reference Include="netty-all-4.0.36.Final, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RocketMQ-Client.1.0.0\lib\net40\netty-all-4.0.36.Final.dll</HintPath>
+      <HintPath>..\packages\RocketMQ-Client.1.0.1\lib\net40\netty-all-4.0.36.Final.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="rocketmq-client-4.2.0-incubating, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RocketMQ-Client.1.0.0\lib\net40\rocketmq-client-4.2.0-incubating.dll</HintPath>
+      <HintPath>..\packages\RocketMQ-Client.1.0.1\lib\net40\rocketmq-client-4.2.0-incubating.dll</HintPath>
     </Reference>
     <Reference Include="rocketmq-common-4.2.0-incubating, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RocketMQ-Client.1.0.0\lib\net40\rocketmq-common-4.2.0-incubating.dll</HintPath>
+      <HintPath>..\packages\RocketMQ-Client.1.0.1\lib\net40\rocketmq-common-4.2.0-incubating.dll</HintPath>
     </Reference>
     <Reference Include="rocketmq-remoting-4.2.0-incubating, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RocketMQ-Client.1.0.0\lib\net40\rocketmq-remoting-4.2.0-incubating.dll</HintPath>
+      <HintPath>..\packages\RocketMQ-Client.1.0.1\lib\net40\rocketmq-remoting-4.2.0-incubating.dll</HintPath>
     </Reference>
     <Reference Include="slf4j-api-1.7.5, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RocketMQ-Client.1.0.0\lib\net40\slf4j-api-1.7.5.dll</HintPath>
+      <HintPath>..\packages\RocketMQ-Client.1.0.1\lib\net40\slf4j-api-1.7.5.dll</HintPath>
     </Reference>
     <Reference Include="SOAFramework.Library.Json, Version=4.0.8.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SOAFramework.Library.Json.1.0.0\lib\net40\SOAFramework.Library.Json.dll</HintPath>
@@ -170,7 +170,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

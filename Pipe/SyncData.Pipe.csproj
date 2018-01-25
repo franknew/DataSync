@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{607995FF-4351-474D-A1A7-91534557ABFC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Chainway.SyncData.Pipe</RootNamespace>
+    <AssemblyName>Chainway.SyncData.Pipe</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SOAFramework.Library.Extension">
+      <HintPath>..\commondll\SOAFramework.Library.Extension.dll</HintPath>
+    </Reference>
+    <Reference Include="SOAFramework.Library.IDGenerator">
+      <HintPath>..\commondll\SOAFramework.Library.IDGenerator.dll</HintPath>
+    </Reference>
+    <Reference Include="SOAFramework.Library.Json">
+      <HintPath>..\commondll\SOAFramework.Library.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SOAFramework.Library.Reflection">
+      <HintPath>..\commondll\SOAFramework.Library.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="SOAFramework.Library.SimpleLogger">
+      <HintPath>..\commondll\SOAFramework.Library.SimpleLogger.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BasePipe.cs" />
+    <Compile Include="Contract.cs" />
+    <Compile Include="Pipe.cs" />
+    <Compile Include="PipeConfig.cs" />
+    <Compile Include="PipeHandler.cs" />
+    <Compile Include="PipeHost.cs" />
+    <Compile Include="PipeWorkerManager.cs" />
+    <Compile Include="PipeWorker.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
