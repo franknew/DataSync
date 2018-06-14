@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{14341CF5-4C99-4488-BC5F-D0FB9B182E77}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Chainway.ServiceMonitor</RootNamespace>
+    <AssemblyName>Chainway.ServiceMonitor.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\monitor_release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MicroService.Library.Server, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\commondll\MicroService.Library.Server.dll</HintPath>
+    </Reference>
+    <Reference Include="SOAFramework.Library.Extension, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\commondll\SOAFramework.Library.Extension.dll</HintPath>
+    </Reference>
+    <Reference Include="SOAFramework.Library.Http, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\commondll\SOAFramework.Library.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="SOAFramework.Library.Json, Version=4.0.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\commondll\SOAFramework.Library.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SOAFramework.Library.JsonRpc, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\commondll\SOAFramework.Library.JsonRpc.dll</HintPath>
+    </Reference>
+    <Reference Include="SOAFramework.Library.Machine, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SOAFramework.Library.Machine.1.0.6\lib\net40\SOAFramework.Library.Machine.dll</HintPath>
+    </Reference>
+    <Reference Include="SOAFramework.Library.Reflection, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\commondll\SOAFramework.Library.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="SOAFramework.Library.SimpleLogger, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\commondll\SOAFramework.Library.SimpleLogger.dll</HintPath>
+    </Reference>
+    <Reference Include="SOAFramework.Library.XML, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\commondll\SOAFramework.Library.XML.dll</HintPath>
+    </Reference>
+    <Reference Include="SOAFramework.Service.SDK.Core">
+      <HintPath>..\commondll\SOAFramework.Service.SDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Monitor\Business\MonitorBusiness.cs" />
+    <Compile Include="Monitor\Business\ServerBusiness.cs" />
+    <Compile Include="Monitor\Business\ServicePanelBusiness.cs" />
+    <Compile Include="Monitor\Business\WindowsServiceBusiness.cs" />
+    <Compile Include="Monitor\Controller\ExceptionFilter.cs" />
+    <Compile Include="Monitor\Controller\ManagedServiceController.cs" />
+    <Compile Include="Monitor\Controller\MonitorController.cs" />
+    <Compile Include="Monitor\Controller\WindowsServiceController.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Monitor\Config\server.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Monitor\Config\config.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Monitor\Config\ws.json" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ServiceMonitor.SDK\ServiceMonitor.SDK.csproj">
+      <Project>{9c009d48-a73e-42cb-a2bf-62d6b9d7a92e}</Project>
+      <Name>ServiceMonitor.SDK</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

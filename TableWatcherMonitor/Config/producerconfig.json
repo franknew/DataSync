@@ -1,0 +1,7 @@
+﻿{
+  "Group": "default",
+  "Address": "183.60.136.195:9876",
+  "Topic": "syncdatanode1",
+  "ServiceName": "数据监视服务",
+  "Top": 1000
+}

@@ -16,7 +16,7 @@ namespace Chainway.Library.SimpleMapper
 
         public ISQLConvert Converter { get; set; }
 
-        public SqlModel ObjectToSql(string tableName, Dictionary<string, object> o, List<WhereClause> where, TableConfig config = null)
+        public SqlModel ObjectToSql(string tableName, IDictionary<string, object> o, IList<WhereClause> where, TableConfig config = null)
         {
             InsertMapper insertMapper = new InsertMapper(Converter);
             UpdateByIDMapper updateMapper = new UpdateByIDMapper(Converter);

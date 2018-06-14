@@ -41,7 +41,7 @@
       <HintPath>..\packages\IBatisNet.1.0.0\lib\net20\IBatisNet.DataMapper.dll</HintPath>
     </Reference>
     <Reference Include="SOAFramework.Library.DAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SOAFramework.Library.DAL.1.0.7\lib\net40\SOAFramework.Library.DAL.dll</HintPath>
+      <HintPath>..\packages\SOAFramework.Library.DAL.1.0.6\lib\net40\SOAFramework.Library.DAL.dll</HintPath>
     </Reference>
     <Reference Include="SOAFramework.Library.Extension, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SOAFramework.Library.Extension.1.0.7\lib\net40\SOAFramework.Library.Extension.dll</HintPath>
@@ -50,10 +50,8 @@
       <HintPath>..\packages\SOAFramework.Library.IDGenerator.1.0.0\lib\net40\SOAFramework.Library.IDGenerator.dll</HintPath>
     </Reference>
     <Reference Include="SOAFramework.Library.Json, Version=4.0.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SOAFramework.Library.Json.1.0.0\lib\net40\SOAFramework.Library.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="SOAFramework.Library.Lib, Version=1.0.0.5, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SOAFramework.Library.Json.1.0.0\lib\net40\SOAFramework.Library.Lib.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\commondll\SOAFramework.Library.Json.dll</HintPath>
     </Reference>
     <Reference Include="SOAFramework.Library.Reflection, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SOAFramework.Library.Reflection.1.0.0\lib\net40\SOAFramework.Library.Reflection.dll</HintPath>

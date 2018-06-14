@@ -1,0 +1,123 @@
+﻿[
+  {
+    "ID": "1",
+    "Mapping": "T_Sys_File",
+    "TableName": "T_CLGLXXB",
+    "Owner": "ADMINISTRATOR",
+    "Tick": 10,
+    "Action": "insertorupdate",
+    "CheckColumn": "CZSJ",
+    "SelectSQL": "SELECT BS AS FileId,BS AS FileGroupId,'CarPicId' AS ListCode,BS AS FileName,ZP AS FileEntity,'T_Sys_OrgAttr' AS TableName,CZSJ AS CrtDate,CZSJ AS UpdDate,CZSJ FROM ADMINISTRATOR.T_CLGLXXB WHERE ZP IS NOT NULL AND LENGTH(CZSJ)>18"
+  },
+  {
+    "ID": "2",
+    "Mapping": "T_CP_CarAttr",
+    "TableName": "T_CLGLXXB",
+    "Owner": "ADMINISTRATOR",
+    "Tick": 10,
+    "Action": "insertorupdate",
+    "CheckColumn": "CZSJ",
+    "SelectSQL": "SELECT BS AS CarId,BS AS FileId,0 AS UseYears,1000 AS Mileage,YXQQ AS InsureBeginDate,YXQZ AS InsureEndDate,NJRQ AS CheckDate,NJRQ AS CheckBeginDate,NJRQ AS CheckEndDate,WHRQQ AS MaintenanceBeginDate,WHRQZ AS MaintenanceEndDate,'' AS MaintenanceId,'' AS CarGradeId,DJPDRQ AS GradeDate,HGZBH AS CertificateNo,JCBGDH AS InspectionNo,CZR AS Operator,CZSJ AS OperateTime,CZSJ,YXQZT AS Status,SHR AS Auditor,SHSJ AS AuditDate,'' AS Licnum,'2' AS Platecolor,'上汽大众' AS Manufacture,'普通桑塔纳' AS Model,BZ AS Remark,CLDJ AS CarLevel,QZBFQZ AS ScrapDate,BMDDBH AS Registry,QZBFQZ AS StopType FROM ADMINISTRATOR.T_CLGLXXB WHERE LENGTH(CZSJ)>18"
+
+  },
+  {
+    "ID": "3",
+    "Mapping": "T_CP_Device",
+    "TableName": "T_CLGLXXB",
+    "Owner": "ADMINISTRATOR",
+    "Tick": 10,
+    "Action": "insertorupdate",
+    "CheckColumn": "CZSJ",
+    "SelectSQL": "SELECT BS AS DeviceId,SIM,'' AS AreaId,PXJGMC AS OrgId,CZR AS Operator,CZSJ AS OperateTime,CZJS,'CHAINWAY' AS Vender,'CWJ500' AS Model,SIM||'00000' AS Imei,SIM||'00000' AS SN,'2017-09-20 00:00:00' AS InstallDate,'1.0' AS Version,'1' AS Status,'' AS SystemId,'' AS TermType FROM ADMINISTRATOR.T_CLGLXXB WHERE LENGTH(CZSJ)>18"
+  },
+  {
+    "ID": "4",
+    "Mapping": "T_CP_Car",
+    "TableName": "T_CLGLXXB",
+    "Owner": "ADMINISTRATOR",
+    "Tick": 10,
+    "Action": "insertorupdate",
+    "CheckColumn": "CZSJ",
+    "SelectSQL": "SELECT BS AS CarId,CLMC AS CarBrand,FDJH AS EngineNo,CJH AS VIN,GMRQ AS BuyDate,PXJGMC AS Owner,CPHM AS CarNumber,SIM AS DeviceId,0 AS Lng,0 AS Lat,CXDM AS StudyType,'' AS AreaId,PXJGMC AS OrgId,CZSJ AS OperateTime,CZSJ,CZR AS Operator,'A75800E2D8CE30C0427F7EFF974A8B370000' AS ServerId FROM ADMINISTRATOR.T_CLGLXXB WHERE LENGTH(CZSJ)>18"
+  },
+  {
+    "ID": "5",
+    "Mapping": "T_Sys_File",
+    "TableName": "T_JLYGLXXB",
+    "Owner": "ADMINISTRATOR",
+    "Tick": 10,
+    "Action": "insertorupdate",
+    "CheckColumn": "CZSJ",
+    "SelectSQL": "SELECT BS AS FileId, BS AS FileGroupId,'JLYTX' AS ListCode,BS AS FileName,JLYZP AS FileEntity,'T_CP_Teacher' AS TableName,CZSJ AS CrtDate,CZSJ AS UpdDate,CZSJ FROM ADMINISTRATOR.T_JLYGLXXB WHERE ZP IS NOT NULL AND LENGTH(CZSJ)>18"
+  },
+  {
+    "ID": "6",
+    "Mapping": "T_CP_TeacherAttr",
+    "TableName": "T_JLYGLXXB",
+    "Owner": "ADMINISTRATOR",
+    "Tick": 10,
+    "Action": "insertorupdate",
+    "CheckColumn": "CZSJ",
+    "SelectSQL": "SELECT BS AS TeacherId,AQXSLC AS SecurityRange,ZJCX AS NormalCarType,ZJIACX AS AccessCarType,JLZH AS TeacherIDcard,JLZH2 AS TeacherIDcard2,CJGZSJ AS WorkTime,'' AS TeacherYear,'' AS Grade,'' AS Title,YXQQ AS ValidBeginDate,YXQZ AS ValidEndDate,KH AS CardNo,'' AS CardInfo,FKR AS SendCardUser,FKSJ AS SendCardDate,BS AS DocId,JLYLX AS TeacherType,0 AS Lng,0 AS Lat,ZW1SFCJ AS Finger1,ZW2SFCJ AS Finger2,JLYZT AS Status,'' AS Remark,'' AS Operator,'' AS OperateTime,SHR AS Auditor,SHSJ AS AuditDate,'1' AS TeachType,'' AS ProxyFlag,JLYBH AS TeacherCode,'' AS WorkBeginTime,'' AS WorkEndTime,HTKSSJ AS ContractBeginTime,HTJSSJ AS ContractEndTime,JLZRQQ AS DriverBeginTime,JLZRQZ AS DriverEndTime,'' AS PredictType,'' AS Hiredate,'' AS LeaveDate,'' AS StarLevel,'' AS TeachAddr,'' AS StudentNum,'' AS ExamPassRate,'' AS Subject2EPR,'' AS Subject3EPR,'' AS StudyTimeSegment,'' AS IsPickUp,'' AS StudyNum,'',a.CZSJ AS StopType FROM T_JLYGLXXB a LEFT OUTER JOIN (SELECT PXJGBH,ServerId FROM T_PXJGGL) b ON a.PXJGMC=b.PXJGBH WHERE LENGTH(CZSJ)>18"
+  },
+  {
+    "ID": "7",
+    "Mapping": "T_CP_Teacher",
+    "TableName": "T_JLYGLXXB",
+    "Owner": "ADMINISTRATOR",
+    "Tick": 10,
+    "Action": "insertorupdate",
+    "CheckColumn": "CZSJ",
+    "SelectSQL": "SELECT BS AS TeacherId,XM AS TeacherName,ServerId AS OrgId,XB AS Sex,CSRQ AS Birthday,'1' AS IdCardType,ZJHM AS IdCard,LXDH AS Phone,JSZCLSJ AS LicenceFirst,JSZBH AS DrivingLicence,JLYSZSF AS Native,HJSZD AS Nation,'' AS Education,XZDZ AS Addr,YZBM AS ZipCode,BZ AS Remark,JSZBH AS Operator,CZSJ AS OperateTime,CZSJ FROM T_JLYGLXXB a LEFT OUTER JOIN (SELECT PXJGBH,ServerId FROM T_PXJGGL) b ON a.PXJGMC=b.PXJGBH WHERE LENGTH(CZSJ)>18"
+  },
+  {
+    "ID": "8",
+    "Mapping": "T_Sys_File",
+    "TableName": "T_JLYGLXXB",
+    "Owner": "ADMINISTRATOR",
+    "Tick": 10,
+    "Action": "insertorupdate",
+    "CheckColumn": "CZSJ",
+    "SelectSQL": "SELECT BS AS StudyId,'' AS Finger1,'' AS Finger2,'' AS FingerPic1,'' AS FingerPic2,'' AS Face,ZP AS FacePic,'' AS FaceBitLen,'' AS FacePicType,CZSJ FROM ADMINISTRATOR.T_XYSQXXB WHERE ZP IS NOT NULL AND LENGTH(CZSJ)>18"
+  },
+  {
+    "ID": "9",
+    "Mapping": "T_CP_Student",
+    "TableName": "T_JLYGLXXB",
+    "Owner": "ADMINISTRATOR",
+    "Tick": 10,
+    "Action": "insertorupdate",
+    "CheckColumn": "CZSJ",
+    "SelectSQL": "SELECT BS AS StudentId,XM AS StudentName,XB AS Sex,ZJLX AS IdCardType,ZJH AS IdCard,CSNY AS Birthday,SJHM AS Phone,'' AS Email,'' AS Nation,ZZ AS Addr,'' AS Education,'' AS ZipCode,'' AS RegCode,'' AS LiveAddr,'' AS LiveCode,CZR AS Operator,CZSJ AS OperateTime,CZSJ,'' AS Remark FROM T_XYSQXXB WHERE LENGTH(CZSJ)>18"
+  },
+  {
+    "ID": "10",
+    "Mapping": "T_CP_StudyAttr",
+    "TableName": "T_JLYGLXXB",
+    "Owner": "ADMINISTRATOR",
+    "Tick": 10,
+    "Action": "insertorupdate",
+    "CheckColumn": "CZSJ",
+    "SelectSQL": "SELECT BS AS StudyId,KMYYXSC*60 AS SubjectValid1,KMYPXSC*60 AS SubjectStudy1,KMEYXSC*60 AS SubjectValid2,KMEPXSC*60 AS SubjectStudy2,KMSYXSC*60 AS SubjectValid3,KMSPXSC*60 AS SubjectStudy3,0 AS SubjectValid4,0 AS SubjectStudy4,KMYSQSJ AS SubjectApplyTime1,KMESQSJ AS SubjectApplyTime2,KMSSQSJ AS SubjectApplyTime3,'' AS SubjectApplyTime4,KMYSHR AS SubjectAuditor1,KMYSHSJ AS SubjectAuditTime1,'' AS SubjectAuditorRemark1,KMESHR AS SubjectAuditor2,KMESHSJ AS SubjectAuditTime2,'' AS SubjectAuditorRemark2,KMSSHR AS SubjectAuditor3,'' AS SubjectAuditorRemark3,KMESHSJ AS SubjectAuditTime3,'' AS SubjectAuditor4,'' AS SubjectAuditorRemark4,'' AS SubjectAuditTime4,KH AS CardNo,'' AS CardInfo,'' AS CardPassword,FKR AS SendCardUser,FKSJ AS SendCardDate,XYFKCS AS SendCardCount,'' AS CloseTime,'' AS CloseNo,'' AS Remark,CZR AS Operator,CZSJ AS OperateTime,0 AS SubjectTheory2,0 AS SubjectTheory3,0 AS SubjectAnalog2,0 AS SubjectAnalog3,0 AS SubjectMileage2,0 AS SubjectMileage3,'' AS OrgAuditor1,'' AS OrgAuditTime1,'' AS OrgAuditor2,'' AS OrgAuditTime2,'' AS OrgAuditor3,'' AS OrgAuditTime3,'' AS GrantFile,'' AS ResultFlag,'' AS FillTime,'' AS OrgPeople1,'' AS OrgPeople2,'' AS OrgPeople3,'' AS TheoryDate,'' AS HandDate,'' AS SubjectNo1,'' AS SubjectNo2,'' AS SubjectNo3,'' AS SkillSendDate,'' AS SkillEnterDate,'' AS ExamPassStatus,'' AS AcceptDate,'' AS ReceiptPrintDate,'' AS ReceiptStatus,'' AS ReceiptMonth,'' AS Amount,'' AS SendStatus,'' AS FingerRewrit,'' AS FingerNot,'' AS PwdApply,'' AS CardCode,CZSJ FROM T_XYSQXXB WHERE LENGTH(CZSJ)>18"
+  },
+  {
+    "ID": "11",
+    "Mapping": "T_Sys_File",
+    "TableName": "T_JLYGLXXB",
+    "Owner": "ADMINISTRATOR",
+    "Tick": 10,
+    "Action": "insertorupdate",
+    "CheckColumn": "CZSJ",
+    "SelectSQL": "SELECT BS AS StudyId,'' AS Finger1,'' AS Finger2,'' AS FingerPic1,'' AS FingerPic2,'' AS Face,ZP AS FacePic,'' AS FaceBitLen,'' AS FacePicType,CZSJ FROM ADMINISTRATOR.T_XYSQXXB WHERE ZP IS NOT NULL AND LENGTH(CZSJ)>18"
+  },
+  {
+    "ID": "12",
+    "Mapping": "T_CP_Study",
+    "TableName": "T_JLYGLXXB",
+    "Owner": "ADMINISTRATOR",
+    "Tick": 10,
+    "Action": "insertorupdate",
+    "CheckColumn": "CZSJ",
+    "SelectSQL": "SELECT BS AS StudyId,BS AS StudentId,XM AS StudentName,'' AS ActivedTime,'' AS ExpireTime,CASE WHEN XYZT<'20' THEN '1' WHEN XYZT>='20' AND XYZT<'30' THEN '20' WHEN XYZT>='30' AND XYZT<'50' THEN '30' ELSE XYZT END AS Status,ServerId AS OrgId,CZR AS OperateTime,CZSJ AS Operator,CZSJ,QS AS Term,PXSJ AS ApplyDate,PXCXHLB AS StudyType,'1' AS Photo,BS AS FileId,'0' AS ProductId,'0' AS PlanId,'' AS Presenter,'' AS ActFlag,'' AS Remark,ZW1SFCJ AS FingerFlag1,ZW2SFCJ AS FingerFlag2,XYZT AS ApproveStates,'1' AS SysStates,0 AS LockStates,XYBH AS StudyCode,YZJCX AS OldDriveCarType,'' AS Registry,'0' AS BusinessType,'' AS DriverLicence,'' AS FirstDriverLicenceDate,'' AS Nationality,XYRXSJ AS StudyDate,'' AS DataSource,'1' AS Standard,'' AS UpdTime,'' AS UpdUser,'' AS EStudyCard,'' AS EStudyStatus,'' AS UIDFROM T_XYSQXXB a LEFT OUTER JOIN (SELECT PXJGBH,ServerId FROM T_PXJGGL) b ON a.PXJGMC=b.PXJGBH WHERE LENGTH(CZSJ)>18"
+  }
+]

@@ -31,35 +31,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Castle.DynamicProxy, Version=1.1.5.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <HintPath>..\packages\IBatisNet.1.0.0\lib\net20\Castle.DynamicProxy.dll</HintPath>
-    </Reference>
-    <Reference Include="IBatisNet.Common, Version=1.6.2.0, Culture=neutral, PublicKeyToken=ed781d9fc396c6ca, processorArchitecture=MSIL">
-      <HintPath>..\packages\IBatisNet.1.0.0\lib\net20\IBatisNet.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="IBatisNet.DataMapper, Version=1.6.2.0, Culture=neutral, PublicKeyToken=ed781d9fc396c6ca, processorArchitecture=MSIL">
-      <HintPath>..\packages\IBatisNet.1.0.0\lib\net20\IBatisNet.DataMapper.dll</HintPath>
-    </Reference>
     <Reference Include="SOAFramework.Library.DAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SOAFramework.Library.DAL.1.0.7\lib\net40\SOAFramework.Library.DAL.dll</HintPath>
-    </Reference>
-    <Reference Include="SOAFramework.Library.Extension, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SOAFramework.Library.Extension.1.0.7\lib\net40\SOAFramework.Library.Extension.dll</HintPath>
-    </Reference>
-    <Reference Include="SOAFramework.Library.IDGenerator, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SOAFramework.Library.IDGenerator.1.0.0\lib\net40\SOAFramework.Library.IDGenerator.dll</HintPath>
-    </Reference>
-    <Reference Include="SOAFramework.Library.Json, Version=4.0.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SOAFramework.Library.Json.1.0.0\lib\net40\SOAFramework.Library.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="SOAFramework.Library.Lib, Version=1.0.0.5, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SOAFramework.Library.Json.1.0.0\lib\net40\SOAFramework.Library.Lib.dll</HintPath>
-    </Reference>
-    <Reference Include="SOAFramework.Library.Reflection, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SOAFramework.Library.Reflection.1.0.0\lib\net40\SOAFramework.Library.Reflection.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\commondll\SOAFramework.Library.DAL.dll</HintPath>
     </Reference>
     <Reference Include="SOAFramework.Library.SimpleLogger, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SOAFramework.Library.SimpleLogger.2.0.0\lib\net40\SOAFramework.Library.SimpleLogger.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\commondll\SOAFramework.Library.SimpleLogger.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -117,7 +95,6 @@
     <None Include="install.bat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="packages.config" />
     <None Include="uninstall.bat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

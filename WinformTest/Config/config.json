@@ -1,0 +1,73 @@
+[
+  {
+    "Path": "D:\\MQ\\alibaba-rocketmq-4.2\\bin",
+    "Name": "D:\\MQ\\alibaba-rocketmq-4.2\\bin\\mqnamesrv.exe",
+    "Argruments": "-d 9876",
+    "FromCommand": false,
+    "Stop": false,
+    "ID": "rockemq-nameserver"
+  },
+  {
+    "Path": "D:\\MQ\\alibaba-rocketmq-4.2\\bin",
+    "Name": "D:\\MQ\\alibaba-rocketmq-4.2\\bin\\mqbroker.exe",
+    "Argruments": "-n 127.0.0.1:9876 autoCreateTopicEnable=true",
+    "FromCommand": false,
+    "Stop": false,
+    "ID": "rockemq-broker"
+  },
+  {
+    "Path": "D:\\Redis3.2",
+    "Name": "D:\\Redis3.2\\redis-server.exe",
+    "Argruments": "D:\\Redis3.2\\redis.windows.conf",
+    "FromCommand": false,
+    "Stop": true,
+    "ID": "redis"
+  },
+  {
+    "Name": "java.exe",
+    "Argruments": "-jar D:\\MQ\\rocketmq-console\\rocketmq-console-ng-1.0.0.jar --server.port=8002 --rocketmq.config.namesrvAddr=127.0.0.1:9876",
+    "FromCommand": false,
+    "Stop": false,
+    "ID": "rocketmq-console"
+  },
+  {
+    "Path": "D:\\部标服务2.0\\redis",
+    "Name": "D:\\部标服务2.0\\redis\\redis-server.exe",
+    "Argruments": "redis.windows.conf",
+    "FromCommand": false,
+    "Stop": false,
+    "ID": "gate-redis"
+  },
+  {
+    "Path": "D:\\部标服务2.0\\route",
+    "Name": "D:\\部标服务2.0\\jdk\\bin\\java.exe",
+    "Argruments": "-Djava.ext.dirs=lib -XX:+ForceTimeHighResolution -jar -Xms256m -Xmx512m lib\\route.jar",
+    "FromCommand": false,
+    "Stop": false,
+    "ID": "route"
+  },
+  {
+    "Path": "D:\\部标服务2.0\\center",
+    "Name": "D:\\部标服务2.0\\jdk\\bin\\java.exe",
+    "Argruments": "-Djava.ext.dirs=lib -XX:+ForceTimeHighResolution -jar -Xms256m -Xmx512m lib\\center.jar",
+    "FromCommand": false,
+    "Stop": false,
+    "ID": "center"
+  },
+  {
+    "Path": "D:\\部标服务2.0\\dtGate500",
+    "Name": "D:\\部标服务2.0\\jdk\\bin\\java.exe",
+    "Argruments": "-Djava.ext.dirs=lib -XX:+ForceTimeHighResolution -jar -Xms256m -Xmx512m lib\\dt500gate.jar",
+    "FromCommand": false,
+    "Stop": false,
+    "ID": "dtgate500"
+  },
+  {
+    "Path": "D:\\部标服务2.0\\dtGate600",
+    "Name": "D:\\部标服务2.0\\jdk\\bin\\java.exe",
+    "Argruments": "-Djava.ext.dirs=lib -XX:+ForceTimeHighResolution -jar -Xms256m -Xmx512m lib\\dtGate600.jar",
+    "FromCommand": false,
+    "Stop": false,
+    "ID": "dtgate600"
+  }
+]

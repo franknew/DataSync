@@ -13,88 +13,54 @@ namespace Chainway.Library.SimpleMapper
         protected IDBHelper _helper;
         protected TableConfig _config;
         protected string _key;
-        protected bool _lockable;
 
         public BaseSQLAction(string key, TableConfig config, IDBHelper helper, bool lockable = true)
         {
             _config = config;
             _helper = helper;
             _key = key;
-            _lockable = lockable;
         }
-        public virtual int Delete(Dictionary<string, object> o, List<WhereClause> where)
+        public virtual int Delete(IDictionary<string, object> o, IList<WhereClause> where)
         {
             ISqlMapper mapper = new DeleteByIDMapper(Factory.CreateConverter(_helper.DBType));
             var model = mapper.ObjectToSql(Common.GetTableName(_key, _config.Owner, o.GetType(), _config, o), o, where, _config);
-            model.SQL = Common.ReplaceParameter(model.SQL, model.Parameters);
             int result = 0;
-            if (_lockable)
-            {
-                lock(this)
-                {
-                    result = _helper.ExecNoneQueryWithSQL(model.SQL, model.Parameters.ToArray());
-                }
-            }
-            else result = _helper.ExecNoneQueryWithSQL(model.SQL, model.Parameters.ToArray());
+            result = _helper.ExecNoneQueryWithSQL(model.SQL, model.Parameters.ToArray());
             return result;
         }
 
-        public virtual int Insert(Dictionary<string, object> o)
+        public virtual int Insert(IDictionary<string, object> o)
         {
             ISqlMapper mapper = new InsertMapper(Factory.CreateConverter(_helper.DBType));
             var model = mapper.ObjectToSql(Common.GetTableName(_key, _config.Owner, o.GetType(), _config, o), o, null, _config);
-            model.SQL = Common.ReplaceParameter(model.SQL, model.Parameters);
             int result = 0;
-            if (_lockable)
-            {
-                lock (this)
-                {
-                    result = _helper.ExecNoneQueryWithSQL(model.SQL, model.Parameters.ToArray());
-                }
-            }
-            else result = _helper.ExecNoneQueryWithSQL(model.SQL, model.Parameters.ToArray());
+            result = _helper.ExecNoneQueryWithSQL(model.SQL, model.Parameters.ToArray());
             return result;
         }
 
-        public virtual int InsertOrUpdate(Dictionary<string, object> o)
+        public virtual int InsertOrUpdate(IDictionary<string, object> o)
         {
             throw new NotImplementedException();
         }
 
-        public virtual DataTable SelectTopN(int TopN, Dictionary<string, object> o, List<WhereClause> where, OrderByClause orderby)
+        public virtual DataTable SelectTopN(int TopN, IDictionary<string, object> o, IList<WhereClause> where, OrderByClause orderby)
         {
             SelectTopNMapper mapper = new SelectTopNMapper(Factory.CreateConverter(_helper.DBType));
             mapper.TopN = TopN;
             mapper.OrderBy = orderby;
 
             var model = mapper.ObjectToSql(Common.GetTableName(_key, _config.Owner, o.GetType(), _config, o), o, where, _config);
-            model.SQL = Common.ReplaceParameter(model.SQL, model.Parameters);
             DataTable table = new DataTable();
-            if (_lockable)
-            {
-                lock (this)
-                {
-                    table = _helper.GetTableWithSQL(model.SQL, model.Parameters.ToArray());
-                }
-            }
-            else table = _helper.GetTableWithSQL(model.SQL, model.Parameters.ToArray());
+            table = _helper.GetTableWithSQL(model.SQL, model.Parameters.ToArray());
             return table;
         }
 
-        public virtual int Update(Dictionary<string, object> o, List<WhereClause> where)
+        public virtual int Update(IDictionary<string, object> o, IList<WhereClause> where)
         {
             ISqlMapper mapper = new UpdateByIDMapper(Factory.CreateConverter(_helper.DBType));
             var model = mapper.ObjectToSql(Common.GetTableName(_key, _config.Owner, o.GetType(), _config, o), o, where, _config);
-            model.SQL = Common.ReplaceParameter(model.SQL, model.Parameters);
             int result = 0;
-            if (_lockable)
-            {
-                lock (this)
-                {
-                    result = _helper.ExecNoneQueryWithSQL(model.SQL, model.Parameters.ToArray());
-                }
-            }
-            else result = _helper.ExecNoneQueryWithSQL(model.SQL, model.Parameters.ToArray());
+            result = _helper.ExecNoneQueryWithSQL(model.SQL, model.Parameters.ToArray());
             return result;
         }
     }

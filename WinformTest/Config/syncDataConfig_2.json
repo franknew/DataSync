@@ -1,0 +1,189 @@
+﻿[
+  {
+    "TableName": "T_Sys_File",
+    "Owner": "DBO",
+    "ColumnMapping": [
+      {
+        "SourceColumn": "FileId",
+        "Primarykey": true
+      },
+      {
+        "SourceColumn": "FileEntity",
+        "DataType": "System.Byte[]"
+      },
+      {
+        "SourceColumn": "CZSJ",
+        "Ingore": true
+      }
+    ]
+  },
+  {
+    "TableName": "T_CP_CarAttr",
+    "Owner": "DBO",
+    "ColumnMapping": [
+      {
+        "SourceColumn": "CarId",
+        "Primarykey": true
+      },
+      {
+        "SourceColumn": "CZSJ",
+        "Ingore": true
+      }
+    ]
+  },
+  {
+    "TableName": "T_CP_Device",
+    "Owner": "DBO",
+    "ColumnMapping": [
+      {
+        "SourceColumn": "DeviceId",
+        "Primarykey": true
+      },
+      {
+        "SourceColumn": "CZSJ",
+        "Ingore": true
+      }
+    ]
+  },
+  {
+    "TableName": "T_CP_Car",
+    "Owner": "DBO",
+    "ColumnMapping": [
+      {
+        "SourceColumn": "CarId",
+        "Primarykey": true
+      },
+      {
+        "SourceColumn": "CZSJ",
+        "Ingore": true
+      }
+    ]
+  },
+  {
+    "TableName": "T_CP_TeacherAttr",
+    "Owner": "DBO",
+    "ColumnMapping": [
+      {
+        "SourceColumn": "TeacherId",
+        "Primarykey": true
+      },
+      {
+        "SourceColumn": "CZSJ",
+        "Ingore": true
+      }
+    ]
+  },
+  {
+    "TableName": "T_CP_Teacher",
+    "Owner": "DBO",
+    "ColumnMapping": [
+      {
+        "SourceColumn": "TeacherId",
+        "Primarykey": true
+      },
+      {
+        "SourceColumn": "CZSJ",
+        "Ingore": true
+      }
+    ]
+  },
+  {
+    "TableName": "T_CP_Student",
+    "Owner": "DBO",
+    "ColumnMapping": [
+      {
+        "SourceColumn": "StudentId",
+        "Primarykey": true
+      },
+      {
+        "SourceColumn": "CZSJ",
+        "Ingore": true
+      }
+    ]
+  },
+  {
+    "TableName": "T_CP_StudyAttr",
+    "Owner": "DBO",
+    "ColumnMapping": [
+      {
+        "SourceColumn": "StudyId",
+        "Primarykey": true
+      },
+      {
+        "SourceColumn": "CZSJ",
+        "Ingore": true
+      },
+      {
+        "SourceColumn": "Amount",
+        "DataType": "System.Decimal"
+      },
+      {
+        "SourceColumn": "FillTime",
+        "DataType": "System.Int32"
+      }
+    ]
+  },
+  {
+    "TableName": "T_CP_Study",
+    "Owner": "DBO",
+    "ColumnMapping": [
+      {
+        "SourceColumn": "StudyId",
+        "Primarykey": true
+      },
+      {
+        "SourceColumn": "CZSJ",
+        "Ingore": true
+      }
+    ]
+  },
+  {
+    "TableName": "T_CP_StudentFeature",
+    "Owner": "DBO",
+    "ColumnMapping": [
+      {
+        "SourceColumn": "StudyId",
+        "Primarykey": true
+      },
+      {
+        "SourceColumn": "CZSJ",
+        "Ingore": true
+      },
+      {
+        "SourceColumn": "FingerPic2",
+        "DataType": "System.Byte[]"
+      },
+      {
+        "SourceColumn": "FingerPic1",
+        "DataType": "System.Byte[]"
+      },
+      {
+        "SourceColumn": "FacePicType",
+        "DataType": "System.Byte[]"
+      },
+      {
+        "SourceColumn": "FacePic",
+        "DataType": "System.Byte[]"
+      },
+      {
+        "SourceColumn": "FaceBitLen",
+        "DataType": "System.Byte[]"
+      }
+    ]
+  },
+  {
+    "TableName": "T_PXJL",
+    "Owner": "ADMINISTRATOR",
+    "ColumnMapping": [
+      {
+        "SourceColumn": "BS",
+        "Primarykey": true,
+        "GenerateID":  true
+      },
+      {
+        "SourceColumn": "OperateTime",
+        "Ingore": true
+      }
+    ]
+  }
+]

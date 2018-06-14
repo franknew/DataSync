@@ -21,7 +21,7 @@ namespace Chainway.Library.SimpleMapper
 
         public ISQLConvert Converter { get; set; }
 
-        public SqlModel ObjectToSql(string tableName, Dictionary<string, object> o, List<WhereClause> where, TableConfig config = null)
+        public SqlModel ObjectToSql(string tableName, IDictionary<string, object> o, IList<WhereClause> where, TableConfig config = null)
         {
             SqlModel model = new SqlModel();
             StringBuilder sql = new StringBuilder();
@@ -44,16 +44,22 @@ namespace Chainway.Library.SimpleMapper
                     IIDGenerator generator = IDGeneratorFactory.Create(GeneratorType.SnowFlak);
                     value = generator.Generate();
                 }
-                if (value == null)
-                {
-                    continue;
-                }
+                if (value == null) { continue; }
                 prefix.AppendFormat("{0},", Converter.FormatColumn(columnName));
-                if (string.IsNullOrEmpty(column?.DataFrom)) values.AppendFormat("{0},", Converter.FormatParameter(columnName));
-                else values.AppendFormat("({0}),", Converter.BuildTopN(column.DataFrom, 1));
+                if (string.IsNullOrEmpty(column?.FromSQL)) values.AppendFormat("{0},", Converter.FormatParameter(columnName));
+                else values.AppendFormat("({0}),", Converter.BuildTopN(column.FromSQL, 1));
                 Parameter param;
                 Type t = Common.GetType(column?.DataType, value.GetType(), value);
-                param = new Parameter { Name = string.Format("{0}", Converter.FormatParameter(columnName)), Value = value.ChangeTypeTo(t), Type = t };
+                try
+                {
+                    param = new Parameter { Name = string.Format("{0}", Converter.FormatParameter(columnName)), Value = value.ChangeTypeTo(t), Type = t };
+                }
+                catch (Exception ex)
+                {
+                    SimpleLogger logger = new SimpleLogger();
+                    logger.Error(key);
+                    throw ex;
+                }
                 list.Add(param);
             }
             //去掉最后一个逗号

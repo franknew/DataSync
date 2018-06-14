@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{50E82080-2E4C-47FA-B287-7B3BF6153C70}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WinformTest</RootNamespace>
+    <AssemblyName>WinformTest</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="IKVM.OpenJDK.Core">
+      <HintPath>..\commondll\rocketmq\IKVM.OpenJDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Runtime">
+      <HintPath>..\commondll\rocketmq\IKVM.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="MicroService.Library.Server, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\commondll\MicroService.Library.Server.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportingServices.Interfaces, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.Interfaces.1.0.0\lib\Microsoft.ReportingServices.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="rocketmq-client-4.2.0-incubating, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\commondll\rocketmq\rocketmq-client-4.2.0-incubating.dll</HintPath>
+    </Reference>
+    <Reference Include="rocketmq-common-4.2.0-incubating, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\commondll\rocketmq\rocketmq-common-4.2.0-incubating.dll</HintPath>
+    </Reference>
+    <Reference Include="SOAFramework.Library.ControlSync">
+      <HintPath>..\commondll\SOAFramework.Library.ControlSync.dll</HintPath>
+    </Reference>
+    <Reference Include="SOAFramework.Library.DAL">
+      <HintPath>..\commondll\SOAFramework.Library.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="SOAFramework.Library.Extension, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\commondll\SOAFramework.Library.Extension.dll</HintPath>
+    </Reference>
+    <Reference Include="SOAFramework.Library.IDGenerator">
+      <HintPath>..\commondll\SOAFramework.Library.IDGenerator.dll</HintPath>
+    </Reference>
+    <Reference Include="SOAFramework.Library.Json, Version=4.0.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\commondll\SOAFramework.Library.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SOAFramework.Library.SimpleLogger, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\commondll\SOAFramework.Library.SimpleLogger.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DB2Helper.cs" />
+    <Compile Include="dependency.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Config\config.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Config\consumerconfig.json">
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Config\consumerconfig_dg.json">
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Config\pipe.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Config\pipe_dg.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Config\producerconfig_local.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Config\producerconfig.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Config\syncDataConfig_3.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Config\syncDataConfig_2.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Config\syncDataConfig.json">
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Config\watcherConfig - 复制.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Config\watcherConfig_2.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Config\watcherConfig.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Config\watcherConfig_dg.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Config\ws.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="jarDependency.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\SyncData.BLL.csproj">
+      <Project>{73e9497e-d75f-4f49-a155-9de6a26cccef}</Project>
+      <Name>SyncData.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ChainwayMQ\ChainwayMQ.csproj">
+      <Project>{1549410c-a2c0-4eff-93e2-a99aef6a8b48}</Project>
+      <Name>ChainwayMQ</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pipe\SyncData.Pipe.csproj">
+      <Project>{607995ff-4351-474d-a1a7-91534557abfc}</Project>
+      <Name>SyncData.Pipe</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServiceMonitor.BLL\ServiceMonitor.BLL.csproj">
+      <Project>{14341cf5-4c99-4488-bc5f-d0fb9b182e77}</Project>
+      <Name>ServiceMonitor.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServiceMonitor.SDK\ServiceMonitor.SDK.csproj">
+      <Project>{9c009d48-a73e-42cb-a2bf-62d6b9d7a92e}</Project>
+      <Name>ServiceMonitor.SDK</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServiceMonitor.Service\ServiceMonitor.Service.csproj">
+      <Project>{31c45939-7eed-4997-b0cb-1691c56120fc}</Project>
+      <Name>ServiceMonitor.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleMapper\SimpleMapper.csproj">
+      <Project>{9a1fb493-8c19-48ac-b033-13ae8d4adfac}</Project>
+      <Name>SimpleMapper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions />
+</Project>

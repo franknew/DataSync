@@ -1,0 +1,42 @@
+﻿[
+  {
+    "ID": "1",
+    "Name": "临沂",
+    "Url": "http://123.131.165.136:9980/ServiceController/"
+  },
+  {
+    "ID": "2",
+    "Name": "甘肃",
+    "Url": "http://61.178.84.92:9080/ServiceController/"
+  },
+  {
+    "ID": "3",
+    "Name": "六盘水",
+    "Url": "http://203.86.28.34:9080/ServiceController/"
+  },
+  {
+    "ID": "4",
+    "Name": "贵州",
+    "Url": "http://183.60.136.195:9080/ServiceController/"
+  },
+  {
+    "ID": "5",
+    "Name": "黑龙江",
+    "Url": "http://61.158.43.212:9080/ServiceController/"
+  },
+  {
+    "ID": "6",
+    "Name": "东莞",
+    "Url": "http://14.152.92.49:9080/ServiceController/"
+  },
+  {
+    "ID": "7",
+    "Name": "常德",
+    "Url": "http://218.75.134.140:9080/ServiceController/"
+  },
+  {
+    "ID": "8",
+    "Name": "山西",
+    "Url": "http://221.204.187.202:9080/ServiceController/"
+  }
+]

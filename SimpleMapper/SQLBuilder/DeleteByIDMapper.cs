@@ -19,7 +19,7 @@ namespace Chainway.Library.SimpleMapper
             Converter = converter;
         }
 
-        public SqlModel ObjectToSql(string tableName, Dictionary<string, object> o, List<WhereClause> where, TableConfig config = null)
+        public SqlModel ObjectToSql(string tableName, IDictionary<string, object> o, IList<WhereClause> where, TableConfig config = null)
         {
             SqlModel model = new SqlModel();
             StringBuilder sql = new StringBuilder();

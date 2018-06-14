@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9C009D48-A73E-42CB-A2BF-62D6B9D7A92E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Chainway.ServiceMonitor.SDK</RootNamespace>
+    <AssemblyName>Chainway.ServiceMonitor.SDK</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SOAFramework.Library.Http">
+      <HintPath>..\commondll\SOAFramework.Library.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="SOAFramework.Library.Json, Version=4.0.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\commondll\SOAFramework.Library.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SOAFramework.Library.Reflection">
+      <HintPath>..\commondll\SOAFramework.Library.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="SOAFramework.Library.SimpleLogger">
+      <HintPath>..\commondll\SOAFramework.Library.SimpleLogger.dll</HintPath>
+    </Reference>
+    <Reference Include="SOAFramework.Service.SDK.Core">
+      <HintPath>..\commondll\SOAFramework.Service.SDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="domain\MachineStatus.cs" />
+    <Compile Include="domain\ServicePanel.cs" />
+    <Compile Include="ManagedService\CheckValid\CheckValidRequest.cs" />
+    <Compile Include="domain\Command.cs" />
+    <Compile Include="domain\CommonResponse.cs" />
+    <Compile Include="domain\Server.cs" />
+    <Compile Include="domain\WindowsService.cs" />
+    <Compile Include="ManagedService\GetMachineStatus\GetMachieStatusResponse.cs" />
+    <Compile Include="ManagedService\GetMachineStatus\GetMachineStatusRequest.cs" />
+    <Compile Include="ManagedService\GetRunningServices\GetRunningServiceRequest.cs" />
+    <Compile Include="ManagedService\GetRunningServices\GetRunningServicesResponse.cs" />
+    <Compile Include="ManagedService\GetServiceInfo\GetServiceInfoRequest.cs" />
+    <Compile Include="ManagedService\GetServiceInfo\GetServiceInfoResponse.cs" />
+    <Compile Include="ManagedService\GetServices\GetServicesRequest.cs" />
+    <Compile Include="ManagedService\GetServices\GetServicesResponse.cs" />
+    <Compile Include="ManagedService\Ping\PingRequest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ManagedService\StartService\StartServiceRequest.cs" />
+    <Compile Include="ManagedService\StopService\StopServiceRequest.cs" />
+    <Compile Include="WindowsService\GetAllServices\GetAllServicesRequest.cs" />
+    <Compile Include="WindowsService\GetAllServices\GetAllServicesResponse.cs" />
+    <Compile Include="WindowsService\GetServiceInfo\GetWSInfoRequest.cs" />
+    <Compile Include="WindowsService\GetServiceInfo\GetWSInfoResponse.cs" />
+    <Compile Include="WindowsService\Start\StartWSRequest.cs" />
+    <Compile Include="WindowsService\Stop\StopWSRequest.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -19,7 +19,7 @@ namespace Chainway.Library.SimpleMapper
 
         public ISQLConvert Converter { get; set; }
 
-        public SqlModel ObjectToSql(string tableName, Dictionary<string, object> o, List<WhereClause> where, TableConfig config = null)
+        public SqlModel ObjectToSql(string tableName, IDictionary<string, object> o, IList<WhereClause> where, TableConfig config = null)
         {
             SqlModel model = new SqlModel();
             StringBuilder prefix = new StringBuilder();
@@ -54,16 +54,36 @@ namespace Chainway.Library.SimpleMapper
                 if (value != null) t = Common.GetType(column?.DataType, value.GetType(), value);
                 if (column != null && column.Primarykey)
                 {
-                    if (value == null) where.Add(new WhereClause { ColumnName = columnName, Seperator = "=", Value = DBNull.Value, DataType = typeof(DBNull) });
-                    else where.Add(new WhereClause { ColumnName = columnName, Seperator = "=", Value = value.ChangeTypeTo(t), DataType = t });
+                    try
+                    {
+                        if (value == null) where.Add(new WhereClause { ColumnName = columnName, Seperator = "=", Value = DBNull.Value, DataType = typeof(DBNull) });
+                        else where.Add(new WhereClause { ColumnName = columnName, Seperator = "=", Value = value.ChangeTypeTo(t), DataType = t });
+
+                    }
+                    catch (Exception ex)
+                    {
+                        SimpleLogger logger = new SimpleLogger();
+                        logger.Error(key);
+                        throw ex;
+                    }
                 }
                 else
                 {
                     if (value == null) prefix.AppendFormat("{0}=NULL,", Converter.FormatColumn(columnName));
                     else
                     {
-                        if (string.IsNullOrEmpty(column?.DataFrom)) prefix.AppendFormat("{0}={1},", Converter.FormatColumn(columnName), Converter.FormatParameter(columnName));
-                        else prefix.AppendFormat("{0}=({1}),", Converter.FormatColumn(columnName), Converter.BuildTopN(column.DataFrom, 1));
+                        try
+                        {
+                            if (string.IsNullOrEmpty(column?.FromSQL)) prefix.AppendFormat("{0}={1},", Converter.FormatColumn(columnName), Converter.FormatParameter(columnName));
+                            else prefix.AppendFormat("{0}=({1}),", Converter.FormatColumn(columnName), Converter.BuildTopN(column.FromSQL, 1));
+
+                        }
+                        catch (Exception ex)
+                        {
+                            SimpleLogger logger = new SimpleLogger();
+                            logger.Write(key);
+                            throw ex;
+                        }
                         list.Add(new Parameter { Name = Converter.FormatParameter(columnName), Value = value.ChangeTypeTo(t), Type = t });
                     }
                 }

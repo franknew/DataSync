@@ -15,7 +15,7 @@ namespace Chainway.Library.SimpleMapper
             : base(key, config, helper, lockable)
         { }
 
-        public override int InsertOrUpdate(Dictionary<string, object> o)
+        public override int InsertOrUpdate(IDictionary<string, object> o)
         {
             SelectByIDMapper existsMapper = new SelectByIDMapper(Factory.CreateConverter(_helper.DBType));
             var configs = _config.ColumnMapping?.FindAll(t => t.GenerateID);
@@ -33,27 +33,18 @@ namespace Chainway.Library.SimpleMapper
             }
             string tableName = Common.GetTableName(_key, _config.Owner, o.GetType(), _config, o);
             var existsModel = existsMapper.ObjectToSql(tableName, o, null, _config);
-            existsModel.SQL = Common.ReplaceParameter(existsModel.SQL, existsModel.Parameters);
             int result = 0;
             result = Execute(tableName, o, existsModel);
             return result;
         }
 
-        private int Execute(string tableName, Dictionary<string, object> o, SqlModel model)
+        private int Execute(string tableName, IDictionary<string, object> o, SqlModel model)
         {
             int result = 0;
             DataTable table = null;
             try
             {
-
-                if (_lockable)
-                {
-                    lock (this)
-                    {
-                        table = _helper.GetTableWithSQL(model.SQL, model.Parameters.ToArray());
-                    }
-                }
-                else table = _helper.GetTableWithSQL(model.SQL, model.Parameters.ToArray());
+                table = _helper.GetTableWithSQL(model.SQL, model.Parameters.ToArray());
             }
             catch (Exception ex)
             {
@@ -65,17 +56,9 @@ namespace Chainway.Library.SimpleMapper
             else mapper = new InsertMapper(Factory.CreateConverter(_helper.DBType));
 
             var saveModel = mapper.ObjectToSql(tableName, o, null, _config);
-            saveModel.SQL = Common.ReplaceParameter(saveModel.SQL, saveModel.Parameters);
             try
             {
-                if (_lockable)
-                {
-                    lock (this)
-                    {
-                        result = _helper.ExecNoneQueryWithSQL(saveModel.SQL, saveModel.Parameters.ToArray());
-                    }
-                }
-                else result = _helper.ExecNoneQueryWithSQL(saveModel.SQL, saveModel.Parameters.ToArray());
+                result = _helper.ExecNoneQueryWithSQL(saveModel.SQL, saveModel.Parameters.ToArray());
             }
             catch (Exception ex)
             {

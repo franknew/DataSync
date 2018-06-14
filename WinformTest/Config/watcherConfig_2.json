@@ -1,0 +1,16 @@
+﻿[
+  {
+    "TableName": "G_POSITION",
+    "Owner": "DB2INST1",
+    "Tick": 1,
+    "NotDeleteData": true,
+    "Action": "InsertOrUpdate",
+    "CheckColumn": "TIMES",
+    "ColumnMapping": [
+      {
+        "SourceColumn": "ZDID",
+        "Primarykey": true
+      }
+    ]
+  }
+]

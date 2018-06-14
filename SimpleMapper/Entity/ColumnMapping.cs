@@ -27,7 +27,10 @@ namespace Chainway.Library.SimpleMapper
         /// 数据类型，.net类型
         /// </summary>
         public string DataType { get; set; }
-        public string DataFrom { get; set; }
+        /// <summary>
+        /// 数据从sql中获取
+        /// </summary>
+        public string FromSQL { get; set; }
         /// <summary>
         /// 是否同步中产生id
         /// </summary>

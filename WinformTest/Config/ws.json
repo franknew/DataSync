@@ -1,0 +1,17 @@
+﻿[
+  {
+    "ServiceName": "GJ"
+  },
+  {
+    "ServiceName": "SyncPart"
+  },
+  {
+    "ServiceName": "服务监控平台"
+  },
+  {
+    "ServiceName": "WpfAutoAuditLocus"
+  },
+  {
+    "ServiceName": "错误数据监视服务"
+  }
+]

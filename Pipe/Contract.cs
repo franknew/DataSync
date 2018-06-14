@@ -8,7 +8,8 @@ namespace Chainway.SyncData.Pipe
 {
     public class Contract
     {
-        public MessageTypeEnum Command { get; set; }
+        private MessageTypeEnum command = MessageTypeEnum.Ready;
+        public MessageTypeEnum Command { get => command; set => command = value; }
 
         public string Data { get; set; }
 

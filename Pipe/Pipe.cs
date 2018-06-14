@@ -10,7 +10,7 @@ namespace Chainway.SyncData.Pipe
 {
     public delegate void ReceiveMessageHandler(byte[] data);
 
-    public class Pipe
+    public class Pipe: IDisposable
     {
         Socket _socket;
 
@@ -134,6 +134,11 @@ namespace Chainway.SyncData.Pipe
         public void Close()
         {
             Socket.Close(30 * 1000);
+        }
+
+        public void Dispose()
+        {
+            Socket?.Dispose();
         }
 
         private void OnReceive(object sender)

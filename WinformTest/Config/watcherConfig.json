@@ -1,0 +1,18 @@
+﻿[
+  
+  {
+    "TableName": "D_MEDIA",
+    "Owner": "DB2INST1",
+    "Regex": "{0:yyyyMM}",
+    "DeleteData": true,
+    "Tick": 1,
+    "Action": "InsertOrUpdate",
+    "SelectSQL": "select  a.*,b.ZDID from {TableName} a left join db2inst1.t_sbxx b on a.car_id = b.clid and a.id>10",
+    "ColumnMapping": [
+      {
+        "SourceColumn": "ID",
+        "Primarykey": true
+      }
+    ]
+  }
+]

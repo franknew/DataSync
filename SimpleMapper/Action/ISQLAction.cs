@@ -9,11 +9,11 @@ namespace Chainway.Library.SimpleMapper
 {
     public interface ISQLAction
     {
-        int Insert(Dictionary<string, object> o);
-        int Update(Dictionary<string, object> o, List<WhereClause> where);
-        int Delete(Dictionary<string, object> o, List<WhereClause> where);
-        int InsertOrUpdate(Dictionary<string, object> o);
-        DataTable SelectTopN(int TopN, Dictionary<string, object> o, List<WhereClause> where, OrderByClause orderby);
+        int Insert(IDictionary<string, object> o);
+        int Update(IDictionary<string, object> o, IList<WhereClause> where);
+        int Delete(IDictionary<string, object> o, IList<WhereClause> where);
+        int InsertOrUpdate(IDictionary<string, object> o);
+        DataTable SelectTopN(int TopN, IDictionary<string, object> o, IList<WhereClause> where, OrderByClause orderby);
 
     }
 }

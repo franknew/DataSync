@@ -1,0 +1,114 @@
+﻿[
+  {
+    "name": "rocketmq-remoting",
+    "dependencies": [
+      "fastjson",
+      "netty-all",
+      "slf4j-api"
+    ]
+  },
+  {
+    "name": "rocketmq-common",
+    "dependencies": [
+      "rocketmq-remoting",
+      "slf4j-api",
+      "netty-all",
+      "fastjson"
+    ]
+  },
+  {
+    "name": "rocketmq-srvutil",
+    "dependencies": [
+      "rocketmq-remoting",
+      "rocketmq-common",
+      "fastjson",
+      "netty-all",
+      "slf4j-api",
+      "commons-cli"
+    ]
+  },
+  {
+    "name": "rocketmq-store",
+    "dependencies": [
+      "rocketmq-common",
+      "logback-classic",
+      "logback-core",
+      "jna",
+      "rocketmq-remoting",
+      "slf4j-api"
+    ]
+  },
+  {
+    "name": "rocketmq-client",
+    "dependencies": [
+      "rocketmq-common",
+      "rocketmq-remoting",
+      "slf4j-api",
+      "fastjson",
+      "netty-all"
+    ]
+  },
+  {
+    "name": "rocketmq-filter",
+    "dependencies": [
+      "rocketmq-common",
+      "rocketmq-srvutil"
+    ]
+  },
+  {
+    "name": "rocketmq-broker",
+    "dependencies": [
+      "rocketmq-common",
+      "rocketmq-store",
+      "rocketmq-remoting",
+      "rocketmq-client",
+      "rocketmq-srvutil",
+      "rocketmq-filter",
+      "logback-classic",
+      "logback-core",
+      "fastjson",
+      "javassist"
+    ]
+  },
+  {
+    "name": "rocketmq-filtersrv",
+    "dependencies": [
+      "rocketmq-client",
+      "rocketmq-store",
+      "rocketmq-srvutil",
+      "logback-classic",
+      "logback-core",
+      "commons-lang3"
+    ]
+  },
+  {
+    "name": "rocketmq-tools",
+    "dependencies": [
+      "rocketmq-client",
+      "rocketmq-store",
+      "rocketmq-srvutil",
+      "fastjson",
+      "logback-classic",
+      "logback-core",
+      "commons-lang3"
+    ]
+  },
+  {
+    "name": "rocketmq-namesrv",
+    "dependencies": [
+      "rocketmq-client",
+      "rocketmq-tools",
+      "rocketmq-srvutil",
+      "logback-classic",
+      "logback-core"
+    ]
+  },
+  {
+    "name": "rocketmq-openmessaging",
+    "dependencies": [
+      "openmessaging-api",
+      "rocketmq-client"
+    ]
+  }
+
+]

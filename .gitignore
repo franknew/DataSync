@@ -13,3 +13,38 @@ packages\
 
 
 
+/.vs/config
+/.vs/SyncData/v15
+/bin
+/BLL/obj
+/BLL/bin/Release
+/ChainwayMQ/obj/Debug
+/ChainwayMQ/bin/Release
+/packages
+/Pipe/obj
+/Pipe/bin/Release
+/ServiceMonitor.BLL/bin/Release
+/ServiceMonitor.BLL/obj
+/ServiceMonitor.Console/bin
+/ServiceMonitor.Console/Logs
+/ServiceMonitor.Console/obj
+/ServiceMonitor.Console/Properties/PublishProfiles
+/ServiceMonitor.Console/pub
+/ServiceMonitor.Console/ServiceMonitorConsole.user
+/ServiceMonitor.Console/ServiceMonitor.Console.csproj.user
+/ServiceMonitor.SDK/bin
+/ServiceMonitor.SDK/obj
+/ServiceMonitor.Service/bin
+/ServiceMonitor.Service/obj
+/SimpleMapper/bin/Release
+/SimpleMapper/obj
+/SyncDataService/obj
+/syncdata_bin
+/TableWatcherMonitor/bin/Debug
+/TableWatcherMonitor/obj
+/TableWatcherService/obj/Debug
+/TableWatcherService/obj/Release
+/tablewatcher_bin
+/WinformTest/bin
+/WinformTest/obj
+*.user

@@ -8,7 +8,7 @@ namespace Chainway.Library.SimpleMapper
 {
     public interface ISqlMapper
     {
-        SqlModel ObjectToSql(string tableName, Dictionary<string, object> o, List<WhereClause> wheres, TableConfig config = null);
+        SqlModel ObjectToSql(string tableName, IDictionary<string, object> o, IList<WhereClause> wheres, TableConfig config = null);
 
         ISQLConvert Converter { get; set; }
     }

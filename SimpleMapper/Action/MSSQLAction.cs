@@ -12,20 +12,12 @@ namespace Chainway.Library.SimpleMapper
             : base(key, config, helper, lockable)
         { }
 
-        public override int InsertOrUpdate(Dictionary<string, object> o)
+        public override int InsertOrUpdate(IDictionary<string, object> o)
         {
             ISqlMapper mapper = new InsertOrUpdateMapper(Factory.CreateConverter(_helper.DBType));
             var model = mapper.ObjectToSql(Common.GetTableName(_key, _config.Owner, o.GetType(), _config, o), o, null, _config);
-            model.SQL = Common.ReplaceParameter(model.SQL, model.Parameters);
             int result = 0;
-            if (_lockable)
-            {
-                lock (this)
-                {
-                    result = _helper.ExecNoneQueryWithSQL(model.SQL, model.Parameters.ToArray());
-                }
-            }
-            else result = _helper.ExecNoneQueryWithSQL(model.SQL, model.Parameters.ToArray());
+            result = _helper.ExecNoneQueryWithSQL(model.SQL, model.Parameters.ToArray());
             return result;
         }
     }

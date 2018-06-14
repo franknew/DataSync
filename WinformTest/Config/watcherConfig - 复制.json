@@ -1,0 +1,50 @@
+﻿[
+  {
+    "TableName": "G_HIS",
+    "Owner": "DB2INST1",
+    "TypeName": "Chainway.SyncData.Entity.G_HIS",
+    "Regex": "{0:yyyyMM}",
+    "Tick": 1,
+    "Action": "Insert",
+    "ColumnMapping": [
+      {
+        "SourceColumn": "ZDID",
+        "Primarykey": true
+      },
+      {
+        "SourceColumn": "TIMES",
+        "Primarykey": true
+      }
+    ]
+  },
+  {
+    "TableName": "D_MEDIA",
+    "Owner": "DB2INST1",
+    "TypeName": "Chainway.SyncData.Entity.D_MEDIA",
+    "Regex": "{0:yyyyMM}",
+    "Tick": 1,
+    "Action": "Insert",
+    "SelectSQL": "select  a.*,b.ZDID from {TableName} a left join db2inst1.t_sbxx b on a.car_id = b.clid ",
+    "ColumnMapping": [
+      {
+        "SourceColumn": "ID",
+        "Primarykey": true
+      }
+    ]
+  },
+  {
+    "TableName": "G_POSITION",
+    "Owner": "DB2INST1",
+    "TypeName": "Chainway.SyncData.Entity.G_POSITION",
+    "Tick": 1,
+    "NotDeleteData": true,
+    "Action": "InsertOrUpdate",
+    "CheckColumn": "TIMES",
+    "ColumnMapping": [
+      {
+        "SourceColumn": "ZDID",
+        "Primarykey": true
+      }
+    ]
+  }
+]
